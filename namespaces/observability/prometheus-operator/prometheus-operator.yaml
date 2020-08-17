@@ -126,6 +126,9 @@ spec:
           flux:
             url: https://grafana.com/api/dashboards/10475/revisions/1/download
             datasource: Prometheus
+          fluxv2:
+            url: https://raw.githubusercontent.com/fluxcd/toolkit/master/manifests/monitoring/grafana/dashboards/control-plane.json
+            datasource: Prometheus
           openebs-01:
             url: https://grafana.com/api/dashboards/12171/revisions/1/download
             datasource: Prometheus

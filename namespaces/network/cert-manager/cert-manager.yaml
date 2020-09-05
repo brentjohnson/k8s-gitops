@@ -9,21 +9,27 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: 'v1.0.0'
+      version: v1.0.1
       sourceRef:
         kind: HelmRepository
         name: jetstack-charts
         namespace: gitops-system
-      interval: 1m
+      interval: 10m
+  # Depends on having the sealed secret cloudflare-cert-manager-token un-encrypted. Also depends on prometheus-operator
+  # due to service monitor resources.
+  # Temporarily disabled sealed-secrets + prometheus-operator due to namespace scope issue: https://github.com/fluxcd/helm-controller/issues/70
+  # dependsOn:
+  #   - sealed-secrets
+  #   - prometheus-operator
   values:
     global:
       podSecurityPolicy:
         enabled: true
     installCRDs: true
     prometheus:
-      enabled: false
+      enabled: true
       servicemonitor:
-        enabled: false
+        enabled: true
     extraArgs:
       - --dns01-recursive-nameservers=1.1.1.1:53
       - --dns01-recursive-nameservers-only

@@ -4,5 +4,5 @@ metadata:
   name: kubernetes-stable-charts
   namespace: gitops-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://kubernetes-charts.storage.googleapis.com/

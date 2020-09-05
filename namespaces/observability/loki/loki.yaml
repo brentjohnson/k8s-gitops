@@ -15,6 +15,9 @@ spec:
         name: grafana-loki-charts
         namespace: gitops-system
       interval: 1m
+  # Depends on having prometheus-operator due to service monitor resources.
+  dependsOn:
+    - prometheus-operator
   values:
     loki:
       enabled: true

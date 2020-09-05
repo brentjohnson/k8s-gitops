@@ -6,9 +6,6 @@ metadata:
   namespace: network
 spec:
   interval: 5m
-  dependsOn:
-    - dex
-    - cert-manager
   chart:
     spec:
       chart: oauth2-proxy
@@ -18,6 +15,12 @@ spec:
         name: kubernetes-stable-charts
         namespace: gitops-system
       interval: 1m
+  # Depends on having the sealed secret oauth2-proxy-dex un-encrypted. Also requires dex + cert-manager to be running.
+  # Temporarily disabled sealed-secrets due to namespace scope issue: https://github.com/fluxcd/helm-controller/issues/70
+  dependsOn:
+    - dex
+    - cert-manager
+    # - sealed-secrets
   values:
     image:
       repository: 'quay.io/pusher/oauth2_proxy'

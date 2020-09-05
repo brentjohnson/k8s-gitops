@@ -16,9 +16,9 @@ gotk install \
   --namespace=gitops-system \
   --arch=arm64
 
-if [[ -f .secrets/k8s-secret-fluxcd-ssh.yaml ]]; then
+if [[ -f .secrets/k8s-secret-ssh-credential.yaml ]]; then
     echo "Applying existing SSH key pair"
-    kubectl apply -f .secrets/k8s-secret-fluxcd-ssh.yaml
+    kubectl apply -f .secrets/k8s-secret-ssh-credential.yaml
 fi
 
 if [[ -f bootstrap/repo.yaml ]]; then

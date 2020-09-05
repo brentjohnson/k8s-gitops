@@ -8,12 +8,15 @@ spec:
   interval: 30s
   ref:
     branch: fluxv2-init
-  url: https://github.com/raspbernetes/k8s-gitops
+  secretRef:
+    name: ssh-credentials
+  url: ssh://git@github.com/raspbernetes/k8s-gitops
   ignore: |
     # exclude all
-    *
+    /*
     # include deploy dir
     !/namespaces/
+    /namespaces/**/*.md
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1alpha1
 kind: Kustomization
@@ -26,4 +29,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: k8s-gitops
-  prune: true
+  prune: false

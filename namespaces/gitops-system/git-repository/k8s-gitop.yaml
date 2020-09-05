@@ -11,4 +11,3 @@ spec:
     branch: fluxv2-init
   url: https://github.com/raspbernetes/k8s-gitops
 status: {}
-

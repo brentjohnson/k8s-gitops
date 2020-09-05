@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1alpha1
 kind: HelmRepository
 metadata:
-  name: jetstack
+  name: kubernetes-stable
   namespace: gitops-system
 spec:
   interval: 1m
-  url: https://charts.jetstack.io/
+  url: https://kubernetes-charts.storage.googleapis.com/

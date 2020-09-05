@@ -14,11 +14,18 @@ gotk bootstrap github \
   --arch=arm64
 ```
 
-
 ```bash
 gotk create source git k8s-gitops \
   --url=https://github.com/raspbernetes/k8s-gitops \
   --branch=fluxv2-init \
   --interval=30s \
   --export > ./k8s-gitop.yaml
+```
+
+```bash
+gotk install \
+  --components=source-controller,kustomize-controller,helm-controller,notification-controller \
+  --namespace=gitops-system \
+  --arch=arm64
+
 ```

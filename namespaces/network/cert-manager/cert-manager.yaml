@@ -12,7 +12,7 @@ spec:
       version: v1.0.0
       sourceRef:
         kind: HelmRepository
-        name: jetstack
+        name: jetstack-charts
         namespace: gitops-system
       interval: 1m
   values:
@@ -21,9 +21,9 @@ spec:
         enabled: true
     installCRDs: true
     prometheus:
-      enabled: true
+      enabled: false
       servicemonitor:
-        enabled: true
+        enabled: false
     extraArgs:
       - --dns01-recursive-nameservers=1.1.1.1:53
       - --dns01-recursive-nameservers-only

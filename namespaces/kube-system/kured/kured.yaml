@@ -15,13 +15,6 @@ spec:
         name: weaveworks-kured
         namespace: gitops-system
       interval: 1m
-spec:
-  releaseName: kured
-  helmVersion: v3
-  chart:
-    repository: https://weaveworks.github.io/kured
-    name: kured
-    version: 2.1.1
   values:
     image:
       repository: raspbernetes/kured

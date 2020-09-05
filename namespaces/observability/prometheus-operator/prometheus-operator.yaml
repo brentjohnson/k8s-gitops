@@ -4,16 +4,17 @@ kind: HelmRelease
 metadata:
   name: prometheus-operator
   namespace: observability
-
 spec:
-  releaseName: prometheus-operator
-  helmVersion: v3
-  rollback:
-    enable: false
+  interval: 5m
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
-    name: prometheus-operator
-    version: 9.3.1
+    spec:
+      chart: prometheus-operator
+      version: 9.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: kubernetes-stable
+        namespace: gitops-system
+      interval: 1m
   values:
     fullnameOverride: 'z'
     prometheusOperator:

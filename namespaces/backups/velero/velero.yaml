@@ -15,6 +15,10 @@ spec:
         name: vmware-charts
         namespace: gitops-system
       interval: 1m
+  # Depends on having the sealed secret cloud-credentials un-encrypted.
+  # Temporarily disabled sealed-secrets due to namespace scope issue: https://github.com/fluxcd/helm-controller/issues/70
+  # dependsOn:
+  #   - sealed-secrets
   values:
     image:
       repository: twoequaldots/velero-arm64

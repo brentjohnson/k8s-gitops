@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: weaveworks-kured-charts
         namespace: gitops-system
-      interval: 1m
+      interval: 5m
   values:
     image:
       repository: raspbernetes/kured

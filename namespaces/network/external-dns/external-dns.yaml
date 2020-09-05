@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: bitnami-charts
         namespace: gitops-system
-      interval: 1m
+      interval: 5m
   # Depends on prometheus-operator due to service monitor resources.
   # Temporarily disabled prometheus-operator due to namespace scope issue: https://github.com/fluxcd/helm-controller/issues/70
   # dependsOn:

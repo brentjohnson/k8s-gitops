@@ -5,7 +5,7 @@ metadata:
   name: k8s-gitops
   namespace: gitops-system
 spec:
-  interval: 30s
+  interval: 5m
   ref:
     branch: fluxv2-init
   url: https://github.com/raspbernetes/k8s-gitops.git

@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: openfaas-charts
         namespace: gitops-system
-      interval: 1m
+      interval: 5m
   values:
     basic_auth: false
     psp: true

@@ -8,9 +8,7 @@ spec:
   interval: 30s
   ref:
     branch: fluxv2-init
-  secretRef:
-    name: ssh-credentials
-  url: ssh://git@github.com/raspbernetes/k8s-gitops
+  url: https://github.com/raspbernetes/k8s-gitops.git
   ignore: |
     # exclude all
     /*

@@ -12,16 +12,16 @@ fi
 [[ ! $(kubectl taint nodes --all node-role.kubernetes.io/master-) ]] && echo "Masters untainted"
 
 gotk install \
-  --components=source-controller,kustomize-controller,helm-controller,notification-controller \
-  --namespace=gitops-system \
-  --arch=arm64
+    --components=source-controller,kustomize-controller,helm-controller,notification-controller \
+    --namespace=gitops-system \
+    --arch=arm64
 
-if [[ -f .secrets/k8s-secret-ssh-credential.yaml ]]; then
-    echo "Applying existing SSH key pair"
-    kubectl apply -f .secrets/k8s-secret-ssh-credential.yaml
-fi
+# if [[ -f .secrets/k8s-secret-ssh-credential.yaml ]]; then
+#     echo "Applying existing SSH key pair"
+#     kubectl apply -f .secrets/k8s-secret-ssh-credential.yaml
+# fi
 
-if [[ -f bootstrap/repo.yaml ]]; then
-    echo "Applying Repo Sync"
-    kubectl apply -f bootstrap/repo.yaml
-fi
+# if [[ -f bootstrap/repo.yaml ]]; then
+#     echo "Applying Repo Sync"
+#     kubectl apply -f bootstrap/repo.yaml
+# fi

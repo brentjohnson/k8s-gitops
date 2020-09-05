@@ -6,6 +6,9 @@ metadata:
   namespace: network
 spec:
   interval: 5m
+  dependsOn:
+    - dex
+    - cert-manager
   chart:
     spec:
       chart: oauth2-proxy

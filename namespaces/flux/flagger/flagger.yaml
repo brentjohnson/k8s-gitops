@@ -4,14 +4,17 @@ kind: HelmRelease
 metadata:
   name: flagger
   namespace: flux
-
 spec:
-  releaseName: flagger
-  helmVersion: v3
+  interval: 5m
   chart:
-    repository: https://flagger.app
-    name: flagger
-    version: 1.0.1
+    spec:
+      chart: flagger
+      version: 1.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: flagger-charts
+        namespace: gitops-system
+      interval: 1m
   values:
     image:
       repository: raspbernetes/flagger

@@ -16,12 +16,12 @@ gotk install \
     --namespace=gitops-system \
     --arch=arm64
 
-# if [[ -f .secrets/k8s-secret-ssh-credential.yaml ]]; then
-#     echo "Applying existing SSH key pair"
-#     kubectl apply -f .secrets/k8s-secret-ssh-credential.yaml
-# fi
+if [[ -f .secrets/k8s-secret-fluxcd-ssh.yaml ]]; then
+    echo "Applying existing sealed-secret key"
+    kubectl apply -f .secrets/k8s-secret-sealed-secret-private-key.yaml
+fi
 
-# if [[ -f bootstrap/repo.yaml ]]; then
-#     echo "Applying Repo Sync"
-#     kubectl apply -f bootstrap/repo.yaml
-# fi
+if [[ -f bootstrap/repo.yaml ]]; then
+    echo "Applying Repo Sync"
+    kubectl apply -f bootstrap/repo.yaml
+fi

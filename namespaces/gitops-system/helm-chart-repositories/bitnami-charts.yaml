@@ -4,5 +4,6 @@ metadata:
   name: bitnami-charts
   namespace: gitops-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://charts.bitnami.com/bitnami
+  timeout: 2m

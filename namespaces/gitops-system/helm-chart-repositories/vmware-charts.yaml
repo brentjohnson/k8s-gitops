@@ -4,5 +4,6 @@ metadata:
   name: vmware-charts
   namespace: gitops-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://vmware-tanzu.github.io/helm-charts
+  timeout: 2m

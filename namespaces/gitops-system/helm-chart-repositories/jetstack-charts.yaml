@@ -4,6 +4,18 @@ metadata:
   name: jetstack-charts
   namespace: gitops-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://charts.jetstack.io/
   timeout: 2m
+---
+apiVersion: source.toolkit.fluxcd.io/v1alpha1
+kind: HelmChart
+metadata:
+  name: cert-manager
+spec:
+  chart: cert-manager
+  version: v1.0.1
+  sourceRef:
+    name: jetstack-charts
+    kind: HelmRepository
+  interval: 5m

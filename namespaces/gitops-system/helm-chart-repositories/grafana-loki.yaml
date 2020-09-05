@@ -4,5 +4,6 @@ metadata:
   name: grafana-loki-charts
   namespace: gitops-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://grafana.github.io/loki/charts
+  timeout: 2m

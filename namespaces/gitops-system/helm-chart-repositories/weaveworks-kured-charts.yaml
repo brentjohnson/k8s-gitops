@@ -4,5 +4,6 @@ metadata:
   name: weaveworks-kured-charts
   namespace: gitops-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://weaveworks.github.io/kured
+  timeout: 2m

@@ -7,3 +7,4 @@ metadata:
 spec:
   interval: 10m
   url: https://flagger.app
+  timeout: 2m

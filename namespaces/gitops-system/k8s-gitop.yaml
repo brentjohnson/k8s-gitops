@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1alpha1
+kind: GitRepository
+metadata:
+  creationTimestamp: null
+  name: k8s-gitops
+  namespace: gitops-system
+spec:
+  interval: 30s
+  ref:
+    branch: fluxv2-init
+  url: https://github.com/raspbernetes/k8s-gitops
+status: {}
+

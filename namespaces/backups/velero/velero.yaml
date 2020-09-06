@@ -45,9 +45,9 @@ spec:
         name: default
         bucket: raspbernetes-velero-backups
     metrics:
-      enabled: true
+      enabled: false
       serviceMonitor:
-        enabled: true
+        enabled: false
     snapshotsEnabled: false
     deployRestic: false
     restic:

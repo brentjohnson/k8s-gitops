@@ -19,15 +19,16 @@ spec:
   # Temporarily disabled sealed-secrets due to namespace scope issue: https://github.com/fluxcd/helm-controller/issues/70
   # dependsOn:
   #   - sealed-secrets
+  timeout: 20m
   values:
     fullnameOverride: 'z'
     prometheusOperator:
       enabled: true
       manageCrds: true
       createCustomResource: true
-      image:
+      imagae:
         repository: quay.io/coreos/prometheus-operator
-        tag: v0.40.0
+        tag: v0.41.1
         pullPolicy: Always
       tlsProxy:
         image:
@@ -43,7 +44,7 @@ spec:
         tag: v0.3.0
       prometheusConfigReloaderImage:
         repository: quay.io/coreos/prometheus-config-reloader
-        tag: v0.40.0
+        tag: v0.41.1
     alertmanager:
       enabled: true
       ingress:

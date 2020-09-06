@@ -26,9 +26,9 @@ spec:
         tag: v0.9.3
     prometheus:
       serviceMonitor:
-        enabled: true
+        enabled: false
       prometheusRule:
-        enabled: true
+        enabled: false
     configInline:
       address-pools:
         - name: default
